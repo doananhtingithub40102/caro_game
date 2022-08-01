@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/caro_game/static/css/main.22941023.css",
-    "main.js": "/caro_game/static/js/main.8648c852.js",
+    "main.js": "/caro_game/static/js/main.276b8027.js",
     "index.html": "/caro_game/index.html",
     "main.22941023.css.map": "/caro_game/static/css/main.22941023.css.map",
-    "main.8648c852.js.map": "/caro_game/static/js/main.8648c852.js.map"
+    "main.276b8027.js.map": "/caro_game/static/js/main.276b8027.js.map"
   },
   "entrypoints": [
     "static/css/main.22941023.css",
-    "static/js/main.8648c852.js"
+    "static/js/main.276b8027.js"
   ]
 }
