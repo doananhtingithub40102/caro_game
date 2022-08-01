@@ -2,54 +2,50 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 
-class Square extends React.Component {
-    render() {
-        return (
-            <button
-                className="square"
-                onClick={() => this.props.onClick()}
-            >
-                {this.props.value}
-            </button>
-        );
-    }
+const Square = (props) => {
+    return (
+        <button
+            className="square"
+            onClick={() => props.onClick()}
+        >
+            {props.value}
+        </button>
+    );
 }
 
-class Board extends React.Component {
-    render() {
-        const arrRow = Array(this.props.row)
-        const arrCol = Array(this.props.col)
-        for (let i = 0; i < (this.props.row * this.props.col); i++) {
-            if (i < this.props.row) {
-                arrRow[i] = i
-            }
-            if (i < this.props.col) {
-                arrCol[i] = i
-            }
+const Board = (props) => {
+    const arrRow = Array(props.row)
+    const arrCol = Array(props.col)
+    for (let i = 0; i < (props.row * props.col); i++) {
+        if (i < props.row) {
+            arrRow[i] = i
         }
-
-        return (
-            <div>
-                {
-                    arrRow.map((valRow, index) => {
-                        return (
-                            <div className="board-row" key={index}>
-                                {
-                                    arrCol.map((valCol, index) =>
-                                        <Square
-                                            key={index}
-                                            value={this.props.squares[valRow * arrCol.length + valCol]}
-                                            onClick={() => this.props.onClick(valRow * arrCol.length + valCol)}
-                                        />
-                                    )
-                                }
-                            </div>
-                        )
-                    })
-                }
-            </div>
-        )
+        if (i < props.col) {
+            arrCol[i] = i
+        }
     }
+
+    return (
+        <div>
+            {
+                arrRow.map((valRow, index) => {
+                    return (
+                        <div className="board-row" key={index}>
+                            {
+                                arrCol.map((valCol, index) =>
+                                    <Square
+                                        key={index}
+                                        value={props.squares[valRow * arrCol.length + valCol]}
+                                        onClick={() => props.onClick(valRow * arrCol.length + valCol)}
+                                    />
+                                )
+                            }
+                        </div>
+                    )
+                })
+            }
+        </div>
+    )
 }
 
 class Game extends React.Component {
